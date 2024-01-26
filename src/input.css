@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Pixel;
+    src: url(../Assets/PixelifySans-VariableFont_wght.ttf);
+}
+.bodyG{
+background-color: #202020;
+}
+.pixel{
+    font-family: Pixel;
+}
+.myPink{
+    background-color: #FF00C7;
+}
+.myRed{
+    background-color: #FF0000;
+}
+.myOrange{
+    background-color: #FF7F00;
+}
+.myYellow{
+    background-color: #FFFF00;
+}
+.myGreen{
+    background-color: #00FF00;
+}
+.myTeal{
+    background-color: #00FF7F;
+}
+.myAqua{
+    background-color: #00FFFF;
+}
+.myBlue{
+    background-color: #0000FF;
+}
+.myViolet{
+    background-color: #7F00FF;
+}
+.myPurple{
+    background-color: #BD00FF;
+}
+.rplyW{
+    width: 500px;
+    text-align: start;
+}
