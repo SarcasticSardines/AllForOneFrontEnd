@@ -90,4 +90,19 @@ async function SentenceFetch(myName, myZodiac){
     SentenceRep = data;
 }
 
+SentenceInp2.addEventListener("keydown", async (e)=> {
+    if(key.event === "Enter"){
+        if(SentenceInp1.value === "" || SentenceInp2.value === ""){
+            return "Please submit 2 numbers";
+        }else{
+            SumRep.textContent = SumFetch(SumInp1.value, SumInp2.value);
+        }
+    }
+})
+
+async function GreaterFetch(numA, numB){
+    const promise = await fetch (`http://localhost:5249/api/Alligator/GorL/${numA}/${numB}`)
+    const data = await promise.text();
+    GreaterRep = data;
+}
 
