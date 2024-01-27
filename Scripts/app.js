@@ -44,6 +44,8 @@ async function MadFetch(adject1, charaName, adject2, noun1, noun2, noun3, color1
     const data = await promise.text();
     MadRep.innerText = data;
 }
+// console.log(HelloFetch());
+// console.log(SumFetch());
 
     MadBtn.addEventListener("click", async (event) =>{
     MadFetch(Mad1.value, Mad2.value, Mad3.value, Mad4.value, Mad5.value, Mad6.value, Mad7.value, Mad8.value, Mad9.value, Mad10.value, Mad11.value, Mad12.value, Mad13.value, Mad14.value, Mad15.value, Mad16.value);
@@ -81,5 +83,11 @@ SumInp2.addEventListener("keydown", async (e)=> {
         }
     }
 })
+
+async function SentenceFetch(myName, myZodiac){
+    const promise = await fetch (`http://localhost:5249/api/MakeSentence/GetBoth/${myName}/${myZodiac}`)
+    const data = await promise.text();
+    SentenceRep = data;
+}
 
 
