@@ -98,7 +98,7 @@ SentenceInp2.addEventListener("keydown", async (e)=> {
             SumRep.textContent = SumFetch(SumInp1.value, SumInp2.value);
         }
     }
-})
+});
 
 async function GreaterFetch(numA, numB){
     const promise = await fetch (`http://localhost:5249/api/Alligator/GorL/${numA}/${numB}`)
@@ -106,3 +106,14 @@ async function GreaterFetch(numA, numB){
     GreaterRep = data;
 }
 
+GreaterInp2.addEventListener("keydown", async (e)=> {
+    if(key.event === "Enter"){
+        if(GreaterInp1.value === "" || GreaterInp2.value === ""){
+            return "Please submit 2 numbers";
+        }else{
+        SumFetch(SumInp1.value, SumInp2.value);
+        }
+    }
+});
+//  async function 
+// deleted other functions due to errors. did not add back
