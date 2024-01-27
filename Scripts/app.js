@@ -44,10 +44,9 @@ async function MadFetch(adject1, charaName, adject2, noun1, noun2, noun3, color1
     const data = await promise.text();
     MadRep.innerText = data;
 }
-MadFetch();
 
     MadBtn.addEventListener("click", async (event) =>{
-         MadRep.textContent = MadFetch(Mad1.value, Mad2.value, Mad3.value, Mad4.value, Mad5.value, Mad6.value, Mad7.value, Mad8.value, Mad9.value, Mad10.value, Mad11.value, Mad12.value, Mad13.value, Mad14.value, Mad15.value, Mad16.value);
+    MadFetch(Mad1.value, Mad2.value, Mad3.value, Mad4.value, Mad5.value, Mad6.value, Mad7.value, Mad8.value, Mad9.value, Mad10.value, Mad11.value, Mad12.value, Mad13.value, Mad14.value, Mad15.value, Mad16.value);
         
     });
 
@@ -55,13 +54,15 @@ async function HelloFetch(userName){
     const promise = await fetch(`http://localhost:5249/api/SayHello/GetName/${userName}`)
     const data = await promise.text();
     console.log(data);
-    return data;
+    helloRep.textContent = data;
 }
+
 
 helloInp.addEventListener("keydown", async (event)=> {
     if(event.key === "Enter"){
-        helloRep.textContent = HelloFetch(helloInp.value);
-        console.log(await HelloFetch(event.target.value));
+        // helloRep.textContent = HelloFetch(helloInp.value);
+        // console.log(await HelloFetch(event.target.value));
+        HelloFetch(helloInp.value);
     }
 });
 
@@ -70,4 +71,15 @@ async function SumFetch(num1, num2){
     const data = await promise.json();
     return data;
 }
+
+SumInp2.addEventListener("keydown", async (e)=> {
+    if(key.event === "Enter"){
+        if(SumInp1.value === "" || SumInp2.value === ""){
+            return "Please submit 2 numbers";
+        }else{
+            SumRep.textContent = SumFetch(SumInp1.value, SumInp2.value);
+        }
+    }
+})
+
 
