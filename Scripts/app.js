@@ -47,18 +47,18 @@ async function MadFetch(adject1, charaName, adject2, noun1, noun2, noun3, color1
 // console.log(HelloFetch());
 // console.log(SumFetch());
 
-    MadBtn.addEventListener("click", async (event) =>{
-    MadFetch(Mad1.value, Mad2.value, Mad3.value, Mad4.value, Mad5.value, Mad6.value, Mad7.value, Mad8.value, Mad9.value, Mad10.value, Mad11.value, Mad12.value, Mad13.value, Mad14.value, Mad15.value, Mad16.value);
+    // MadBtn.addEventListener("click", async (event) =>{
+    // MadFetch(Mad1.value, Mad2.value, Mad3.value, Mad4.value, Mad5.value, Mad6.value, Mad7.value, Mad8.value, Mad9.value, Mad10.value, Mad11.value, Mad12.value, Mad13.value, Mad14.value, Mad15.value, Mad16.value);
         
-    });
+    // }); commented out
 
 async function HelloFetch(userName){
     const promise = await fetch(`http://localhost:5249/api/SayHello/GetName/${userName}`)
     const data = await promise.text();
-    console.log(data);
+    // console.log(data); commented this
     helloRep.textContent = data;
 }
-
+// Commented out Madbtn because its AddEventListener buggs out JS. Say Hello Works here
 
 helloInp.addEventListener("keydown", async (event)=> {
     if(event.key === "Enter"){
