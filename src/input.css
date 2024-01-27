@@ -42,7 +42,14 @@ background-color: #202020;
 .myPurple{
     background-color: #BD00FF;
 }
-.rplyW{
-    width: 500px;
-    text-align: start;
+.responDiv{
+display: flex;
+justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .responDiv{
+        position: absolute;
+   right: 13%;
+    }
 }
